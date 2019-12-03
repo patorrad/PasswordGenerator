@@ -1,0 +1,36 @@
+body {
+    border: red;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    height: 300px;
+    width: 500px;
+    margin-top: 15vw;
+    border: 2px solid seagreen;
+    border-radius: 20px;
+    background-color: seagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.boxItem {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonItem {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+#generate, #copy {
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    white-space: normal;
+}

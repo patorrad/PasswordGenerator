@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="box">
+      <header class="boxItem">
+        <h1>Passwordator</h1>
+      </header>
+      <div class="boxItem">
+        <h2>Generate a Password</h2>
+      </div>
+      <div class="boxItem">
+        <form>
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea><br>
+          <input type="checkbox" id="specialCharacter"> Special Character<br>
+          <input type="checkbox" name="vehicle2" value="Car"> Numeric characters<br>
+          <input type="checkbox" name="vehicle3" value="Boat" checked> Lowercase characters<br>
+          <input type="checkbox" name="vehicle3" value="Boat" checked> Uppercase characters<br>
+        </form>
+      </div>
+      <div class="buttonItem">
+        <button id="generate">Generate<br /> Password</button>
+        <button id="copy">
+          Copy<br />to<br />Clipboard
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
