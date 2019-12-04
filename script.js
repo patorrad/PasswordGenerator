@@ -69,8 +69,12 @@ function boxColor(event) {
     if (index >= 2) changeColor("seagreen");
 }
 
-function copyToClipboard() {
+function copyToClipboard(event) {
     // BONUS 
+    var copyText = document.getElementById("password");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
 }
 
 function slideNumber() {
@@ -79,6 +83,7 @@ function slideNumber() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyToClipboard);
 document.addEventListener("change", boxColor);
 sliderNum.addEventListener("change", slideNumber);
 
