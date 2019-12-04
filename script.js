@@ -5,9 +5,17 @@ var generateBtn = document.querySelector("#generate");
 var copyBtn = document.querySelector("#copy");
 var passwordLength = document.getElementById("slider");
 var flashMsg = document.getElementById("flashMsg");
+var sliderNum = document.getElementById("slider");
 
 //this function will fire when you click the generate password button on the page.  I've set it to alert "You've clicked a button" and return a password of password for now. Update it to make your password
-
+function checkBoxes() {
+    var index = 0;
+    if (specialChar.checked)   index++;
+    if (numericChar.checked)   index++;     
+    if (lowerCaseChar.checked) index++;     
+    if (upperCaseChar.checked) index++; 
+    return index;
+}
 function getPoolOfChar() {
     
     var poolOfChar = "";
@@ -32,7 +40,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-    if (!(specialChar.checked || numericChar.checked || lowerCaseChar.checked || upperCaseChar.checked))  
+    if (checkBoxes() === 0)  
     {
         flashMsg.textContent = "Please check a minimum of one box. Try again.";
     
@@ -49,11 +57,29 @@ function writePassword() {
     }
 }
 
+function changeColor(color) {
+    document.querySelector(".box").style.backgroundColor = color;
+    document.querySelector(".box").style.borderColor = color;
+}
+
+function boxColor(event) {
+    var index = checkBoxes();
+    if (index === 0) changeColor("red");
+    if (index === 1) changeColor("darkorange");
+    if (index >= 2) changeColor("seagreen");
+}
+
 function copyToClipboard() {
     // BONUS 
 }
 
+function slideNumber() {
+    document.querySelector("#ch").textContent = "Number of Characters: " + sliderNum.value;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+document.addEventListener("change", boxColor);
+sliderNum.addEventListener("change", slideNumber);
 
 // BONUS EVENT LISTENER

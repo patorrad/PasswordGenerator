@@ -19,11 +19,13 @@
       <div class="boxItem">
         <form>
           <input type="range" min="8" max="128" value="8" id="slider"><br>
+          <h2 id="ch">Number of Characters: 8</h2>
           <input type="checkbox" id="specialChar"> Special Character<br>
           <input type="checkbox" id="numericChar"> Numeric characters<br>
           <input type="checkbox" id="lowerCaseChar"> Lowercase characters<br>
           <input type="checkbox" id="upperCaseChar"> Uppercase characters<br>
           <textarea
+            rows="3" cols="50"
             readonly
             id="password"
             placeholder="Your Secure Password"
@@ -31,7 +33,7 @@
           ></textarea><br>
         </form>
       </div>
-      <h1 id="flashMsg"></h1>
+      <h2 id="flashMsg"></h2>
       <div class="buttonItem">
         <button id="generate">Generate<br /> Password</button>
         <button id="copy">
