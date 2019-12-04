@@ -19,12 +19,19 @@
       <div class="boxItem">
         <form>
           <input type="range" min="8" max="128" value="8" id="slider"><br>
-          <input type="checkbox" id="specialCharacter"> Special Character<br>
-          <input type="checkbox" name="vehicle2" value="Car"> Numeric characters<br>
-          <input type="checkbox" name="vehicle3" value="Boat" checked> Lowercase characters<br>
-          <input type="checkbox" name="vehicle3" value="Boat" checked> Uppercase characters<br>
+          <input type="checkbox" id="specialChar"> Special Character<br>
+          <input type="checkbox" id="numericChar"> Numeric characters<br>
+          <input type="checkbox" id="lowerCaseChar"> Lowercase characters<br>
+          <input type="checkbox" id="upperCaseChar"> Uppercase characters<br>
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea><br>
         </form>
       </div>
+      <h1 id="flashMsg"></h1>
       <div class="buttonItem">
         <button id="generate">Generate<br /> Password</button>
         <button id="copy">

@@ -3,28 +3,50 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var copyBtn = document.querySelector("#copy");
+var passwordLength = document.getElementById("slider");
+var flashMsg = document.getElementById("flashMsg");
 
 //this function will fire when you click the generate password button on the page.  I've set it to alert "You've clicked a button" and return a password of password for now. Update it to make your password
-function getCheckBoxValue(checkBoxName) {
-    return checkBoxName.checked;
+
+function getPoolOfChar() {
+    
+    var poolOfChar = "";
+
+    if (specialChar.checked)                    poolOfChar += "~!@#$%^&*";
+    if (numericChar.checked)                   poolOfChar += "0123456789";
+    if (lowerCaseChar.checked) poolOfChar += "abcdefghijklmnopqrstuvwxyz";
+    if (upperCaseChar.checked) poolOfChar += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    return poolOfChar;
 }
 
 function generatePassword() {
     //YOUR CODE HERE
-    var lengthPassword = prompt("Enter password length between 8 and 128");
-    
-    return lengthPassword;
+    var password = "";
+    characterPool = getPoolOfChar()
+    while (password.length < passwordLength.value) {
+    password += characterPool[Math.floor(Math.random() * characterPool.length)];
+    } 
+    return password;
 }
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+    if (!(specialChar.checked || numericChar.checked || lowerCaseChar.checked || upperCaseChar.checked))  
+    {
+        flashMsg.textContent = "Please check a minimum of one box. Try again.";
+    
+    } else 
+    {
+        flashMsg.textContent = "";
+        var password = generatePassword();
+        var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
+        passwordText.value = password;
 
-    copyBtn.removeAttribute("disabled");
-    copyBtn.focus();
+        copyBtn.removeAttribute("disabled");
+        copyBtn.focus();
+    }
 }
 
 function copyToClipboard() {
