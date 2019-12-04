@@ -65,9 +65,42 @@ h2 {
     cursor: pointer;
   }
 
-  #ch {
+#ch {
     text-align: left;
-  }
+}
 #password {
     margin: 20px;
 }
+
+@media screen and (max-width: 500px) {
+    /* The body's bg color will be #333 */
+    .body {
+      width: 500px;
+    }
+
+    .box {
+        width: 500px;
+        border-radius: 0px;
+    }
+
+    .boxItem {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #slider {
+        width: 100%;
+    }
+
+    #form {
+        width: 300px;
+    }
+
+    #password {
+        width: 100%;
+    }
+    /* The wrapper's width will be 600px */
+    /* .wrapper {
+      width: 600px;
+    } */
+  }
